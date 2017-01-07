@@ -1,0 +1,11 @@
+<h1> Showing the requested trip </h1>
+
+<p><%= @trip.name %></p>
+<p><%= @trip.city %></p>
+<p><%= @trip.country %></p>
+<p><%= @trip.date %></p>
+
+<div id="page_links">
+<%= link_to 'Back', :back %>
+<%= link_to 'Edit', edit_trip_path(@trip) %>
+</div> 

@@ -1,0 +1,43 @@
+
+<h1>Here are your upcoming trips!</h1>
+
+<div id="trip_table">
+<% if @trips.any? %>
+<table>
+  <thead>
+    <tr>
+      <td>Trip name </td>
+      <td>City </td>
+      <td>Country </td>
+      <td>Date </td>
+    </tr>
+  </thead>
+  <tbody>
+  <% @trips.each do |trip| %>
+    <tr>
+      <td><%= trip.name %></td>
+      <td><%= trip.city %></td>
+      <td><%= trip.country %></td>
+      <td><%= trip.date %></td>
+    <div id="page_links">
+      <td><%= link_to 'Show', trip_path(trip) %></td>
+      <td><%= link_to 'Edit', edit_trip_path(trip) %></td>
+      <td><%= link_to 'Delete', trip_path(trip),data: {:confirm => 'Are you sure?'}, :method => :delete %></td>
+    </div>
+    </tr>
+  <% end %>
+  </tbody>
+  </table>
+<% end %>
+</div>
+
+<h3><%= link_to 'New Trip', new_trip_path %></h3>
+
+
+<section class="section-divider textdivider divider3">
+  <div class="container">
+    <h1>RIO DE JANEIRO, BRASIL</h1>
+    <hr>
+    <p> Where will you go next?</p> 
+  </div><!-- container -->
+</section>

@@ -1,0 +1,23 @@
+<style>
+body {
+  margin-top: 60px;
+}
+</style>
+<body>
+<h1>Hello</h1>
+
+<% if user_signed_in? %>
+<!-- this is the logout button -->
+<div id="logout">
+  <%= link_to "Log out", destroy_user_session_path, :method => :delete %>
+</div>
+
+<div id="header">
+
+</div>
+
+</body>
+
+<% else %>
+
+<% end %>
